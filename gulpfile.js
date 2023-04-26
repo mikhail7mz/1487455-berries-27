@@ -69,6 +69,14 @@ export function createWebp () {
     .pipe(gulp.dest('build/img'))
 }
 
+export function createAvif () {
+  return gulp.src('source/img/**/*.{png,jpg}')
+    .pipe(squoosh({
+      avif: {}
+    }))
+    .pipe(gulp.dest('build/img'))
+}
+
 export function optimizeVector () {
   return gulp.src(['source/img/**/*.svg', '!source/img/icons/**/*.svg'])
     .pipe(svgo())
@@ -125,7 +133,8 @@ function compileProject (done) {
     createStack,
     copyAssets,
     optimizeImages,
-    createWebp
+    createWebp,
+    createAvif
   )(done);
 }
 
