@@ -1,1 +1,11 @@
 /* здесь используйте глобальные переменные */
+
+$font-default: "raleway", arial, tahoma, sans-serif;
+$font-accent: "comfortaa", cursive;
+$color-default: #000000;
+
+$background-default: #fbfcfe;
+
+:root {
+  --page-offset: 26px;
+}

@@ -1,0 +1,50 @@
+@use "../global/variables" as *;
+@use "../global/media" as *;
+
+.logo {
+  text-decoration: none;
+  color: #0f805d;
+
+  &:focus,
+  &:focus-visible {
+    outline-color: #6a107a;
+    outline-offset: 6px;
+  }
+
+  :hover {
+    color: #7bdb0a;
+    cursor: pointer;
+  }
+
+  :active {
+    color: rgba(15, 128, 93, 0.5);
+  }
+}
+
+.logo--current-page {
+  pointer-events: none;
+}
+
+.logo__mobile {
+  display: block;
+  width: 52px;
+  height: 52px;
+
+  @media #{$not-mobile} {
+    display: none;
+  }
+}
+
+.logo__not-mobile {
+  display: none;
+  width: 133px;
+  height: 60px;
+
+  @media #{$not-mobile} {
+    display: block;
+  }
+
+  @media #{$desktop-only} {
+    width: 135px;
+  }
+}

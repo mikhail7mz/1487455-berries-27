@@ -1,7 +1,25 @@
 /* GLOBAL */
-@import "global/variables";
-@import "global/global";
-@import "global/fonts";
+@use "global/variables";
+@use "global/global";
+@use "global/fonts";
+@use "global/media";
+
+/* UTILS */
+@use "utils/page";
+@use "utils/breaker";
+@use "utils/container";
+@use "utils/visually-hidden";
 
 /* BLOCKS */
-@import "blocks/header";
+@use "blocks/logo";
+@use "blocks/button";
+@use "blocks/heading";
+@use "blocks/subheading";
+@use "blocks/header";
+@use "blocks/intro";
+@use "blocks/catalog";
+@use "blocks/news";
+@use "blocks/form";
+@use "blocks/contacts";
+@use "blocks/social";
+@use "blocks/footer";

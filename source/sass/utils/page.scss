@@ -1,0 +1,101 @@
+@use "../global/variables" as *;
+@use "../global/media" as *;
+
+.page {
+  height: 100%;
+}
+
+.page__body {
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font: 14px/16px $font-default;
+  color: $color-default;
+  background-color: $background-default;
+
+  @media #{$not-mobile} {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.page__body--theme-white {
+  background-color: #ffffff;
+}
+
+.page__main {
+  flex-grow: 1;
+  overflow-x: hidden;
+}
+
+.page__main--has-top-background::before {
+  display: block;
+  height: 120px;
+  background-color: #dcd6dd;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+  content: "";
+
+  .webp & {
+    background-image: url("../../img/main-background--mobile@1x.webp");
+  }
+
+  .fallback & {
+    background-image: url("../../img/main-background--mobile@1x.jpg");
+  }
+
+  @media (min-resolution: 2dppx) {
+    .webp & {
+      background-image: url("../../img/main-background--mobile@2x.webp");
+    }
+
+    .fallback & {
+      background-image: url("../../img/main-background--mobile@2x.jpg");
+    }
+  }
+
+  @media (min-width: ($breakpoint-mobile + 1px)) {
+    height: 200px;
+
+    .webp & {
+      background-image: url("../../img/main-background--tablet@1x.webp");
+    }
+
+    .fallback & {
+      background-image: url("../../img/main-background--tablet@1x.jpg");
+    }
+  }
+
+  @media (min-width: ($breakpoint-mobile + 1px)) and (min-resolution: 2dppx) {
+    .webp & {
+      background-image: url("../../img/main-background--tablet@2x.webp");
+    }
+
+    .fallback & {
+      background-image: url("../../img/main-background--tablet@2x.jpg");
+    }
+  }
+
+  @media (min-width: ($breakpoint-mobile + 1px)) {
+    .webp & {
+      background-image: url("../../img/main-background--desktop@1x.webp");
+    }
+
+    .fallback & {
+      background-image: url("../../img/main-background--desktop@1x.jpg");
+    }
+  }
+
+  @media (min-width: ($breakpoint-mobile + 1px)) and (min-resolution: 2dppx) {
+    .webp & {
+      background-image: url("../../img/main-background--desktop@2x.webp");
+    }
+
+    .fallback & {
+      background-image: url("../../img/main-background--desktop@2x.jpg");
+    }
+  }
+}

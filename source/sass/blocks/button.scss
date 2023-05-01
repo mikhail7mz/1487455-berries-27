@@ -1,0 +1,39 @@
+@use "../global/variables" as *;
+@use "../global/media" as *;
+
+.button {
+  display: block;
+  padding: 16px;
+  border: none;
+  border-radius: 40px;
+  font-size: 20px;
+  line-height: 23px;
+  color: #fbfcfe;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  background: none;
+  background-color: #6a107a;
+  overflow-wrap: anywhere;
+
+  @media #{$not-mobile} {
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline-color: #6a107a;
+    outline-offset: 6px;
+  }
+
+  &:hover {
+    background-color: #b22ec8;
+    filter: drop-shadow(0 4px 4px rgba(88, 13, 101, 0.25));
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: rgba(106, 16, 122, 0.6);
+  }
+}

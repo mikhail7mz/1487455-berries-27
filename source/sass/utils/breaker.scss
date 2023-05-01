@@ -1,0 +1,47 @@
+@use "../global/media" as *;
+
+.breaker::after {
+  content: "\A";
+}
+
+.breaker--all::after {
+  white-space: pre;
+}
+
+.breaker--mobile-only::after {
+  @media #{$mobile-only} {
+    white-space: pre;
+  }
+}
+
+.breaker--not-mobile::after {
+  @media #{$not-mobile} {
+    white-space: pre;
+  }
+}
+
+.breaker--tablet-only::after {
+  @media #{$tablet-only} {
+    white-space: pre;
+  }
+}
+
+.breaker--not-tablet::after {
+  white-space: pre;
+
+  @media #{$tablet-only} {
+    white-space: normal;
+  }
+}
+
+.breaker--desktop-only::after {
+  @media #{$desktop-only} {
+    white-space: pre;
+  }
+}
+
+.breaker--not-desktop::after {
+  @media #{$not-desktop} {
+    white-space: pre;
+  }
+}

@@ -1,0 +1,14 @@
+@use "../global/variables" as *;
+@use "../global/media" as *;
+
+.subheading {
+  margin-top: 0;
+  font: 400 20px/23px $font-default;
+  color: #0f805d;
+  overflow-wrap: anywhere;
+
+  @media #{$not-mobile} {
+    font-size: 28px;
+    line-height: 33px;
+  }
+}

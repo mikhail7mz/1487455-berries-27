@@ -1,0 +1,147 @@
+@use "../global/variables" as *;
+@use "../global/media" as *;
+
+.catalog {
+  margin-bottom: 64px;
+
+  @media #{$not-mobile} {
+    margin-bottom: 100px;
+  }
+}
+
+.catalog__heading {
+  margin-bottom: 64px;
+
+  @media #{$not-mobile} {
+    margin-bottom: 72px;
+  }
+
+  @media #{$desktop-only} {
+    margin-bottom: 92px;
+  }
+}
+
+.catalog__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  @media #{$not-mobile} {
+    gap: 52px;
+  }
+
+  @media #{$desktop-only} {
+    justify-content: start;
+    gap: 52px 24px;
+  }
+}
+
+.catalog__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 264px;
+  min-height: 432px;
+  padding-bottom: 54px;
+  border-radius: 40px;
+  font-size: 18px;
+  line-height: 21px;
+  color: $color-default;
+  background-color: #fbfcfe;
+  filter: drop-shadow(0 4px 4px rgba(88, 13, 101, 0.15));
+}
+
+.catalog__item--not-mobile {
+  @media #{$mobile-only} {
+    display: none;
+  }
+}
+
+.catalog__image-link {
+  display: block;
+  text-decoration: none;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  overflow: hidden;
+
+  &:focus,
+  &:focus-visible {
+    outline-color: #6a107a;
+    outline-offset: 6px;
+  }
+
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.catalog__image {
+  display: block;
+  width: 264px;
+  height: 180px;
+}
+
+.catalog__title {
+  width: 220px;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.catalog__title-link {
+  font-size: 28px;
+  line-height: 33px;
+  color: #0f805d;
+  text-align: center;
+  text-decoration: none;
+
+  &:focus,
+  &:focus-visible {
+    outline-color: #6a107a;
+    outline-offset: 6px;
+  }
+
+  &:hover {
+    color: #7bdb0a;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: rgba(15, 128, 93, 0.5);
+  }
+}
+
+.catalog__price {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+  transform: translate(2px, -2px);
+}
+
+.catalog__price-amount,
+.catalog__price-unit {
+  min-width: 52px;
+  max-width: 46%;
+  overflow-wrap: anywhere;
+}
+
+.catalog__button {
+  width: 220px;
+  min-height: 51px;
+  margin-top: auto;
+  padding: 14px;
+  font-size: 20px;
+  line-height: 23px;
+}

@@ -1,0 +1,20 @@
+@use "../global/variables" as *;
+@use "../global/media" as *;
+
+.heading {
+  margin-top: 0;
+  font: 400 36px/40px $font-accent;
+  text-align: center;
+  color: #0f805d;
+  overflow-wrap: anywhere;
+
+  @media #{$not-mobile} {
+    font-size: 48px;
+    line-height: 54px;
+  }
+
+  @media #{$desktop-only} {
+    font-size: 52px;
+    line-height: 58px;
+  }
+}
