@@ -163,6 +163,11 @@
 
 .form__control-textarea {
   height: 124px;
+  line-height: 19px;
+
+  @media #{$not-mobile} {
+    line-height: 20px;
+  }
 }
 
 .form__control-textarea--small {
@@ -289,9 +294,19 @@
 }
 
 .form__control-group--berry {
-  margin-bottom: 29px;
+  margin-bottom: -2px;
   column-count: 2;
   column-gap: 20px;
+
+  &::after {
+    @media #{$mobile-only} {
+      display: inline-block;
+      width: 100%;
+      height: 80px;
+      margin-bottom: 32px;
+      content: "";
+    }
+  }
 
   @media #{$not-mobile} {
     margin-bottom: 50px;
@@ -310,12 +325,6 @@
 
   @media #{$not-mobile} {
     margin-bottom: 24px;
-  }
-
-  &:nth-of-type(10n):last-of-type {
-    @media #{$mobile-only} {
-      margin-bottom: calc(44px * 2);
-    }
   }
 }
 
